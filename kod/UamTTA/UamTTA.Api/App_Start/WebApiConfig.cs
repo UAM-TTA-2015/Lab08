@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Configuration;
+using System.Reflection;
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
@@ -30,7 +31,7 @@ namespace UamTTA.Api
 
         private static void ConfigureContainer(ContainerBuilder builder)
         {
-            builder.Register(_ => new UamTTAContext()).As<UamTTAContext>();
+            builder.Register(_ => new UamTTAContext("UamTTAConnectionString")).As<UamTTAContext>();
             builder.RegisterType<BudgetFactory>().As<IBudgetFactory>();
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>));
             builder.RegisterType<BudgetService>().As<IBudgetService>();

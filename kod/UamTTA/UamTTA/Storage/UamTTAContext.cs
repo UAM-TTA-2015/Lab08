@@ -1,11 +1,18 @@
-﻿using System.Data.Entity;
+﻿using System.Configuration;
+using System.Data.Entity;
 using UamTTA.Model;
 
 namespace UamTTA.Storage
 {
     public class UamTTAContext : DbContext
     {
-        public UamTTAContext() : base("UamTTAContext")
+        public UamTTAContext()
+            : this("UamTTAConnectionString")
+        {
+        }
+
+        public UamTTAContext(string connectionStringName)
+            : base(ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString)
         {
         }
 

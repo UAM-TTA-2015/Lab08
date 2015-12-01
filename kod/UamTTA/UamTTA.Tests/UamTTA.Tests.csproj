@@ -61,7 +61,6 @@
     <Compile Include="Services\BudgetFactoryTests.cs" />
     <Compile Include="Services\BudgetServiceTests.cs" />
     <Compile Include="Tools\EnumerableExtensionsTests.cs" />
-    <Compile Include="Storage\RepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Storage\InMemoryRepositoryTests.cs" />
   </ItemGroup>
