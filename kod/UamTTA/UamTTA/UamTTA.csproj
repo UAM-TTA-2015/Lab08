@@ -71,9 +71,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Budget.cs" />
+    <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\BudgetFactory.cs" />
     <Compile Include="Model\BudgetTemplate.cs" />
     <Compile Include="Model\Duration.cs" />
+    <Compile Include="Services\IAccountService.cs" />
     <Compile Include="Tools\EnumerableExtensions.cs" />
     <Compile Include="Model\IEntity.cs" />
     <Compile Include="Model\ModelBase.cs" />

@@ -31,5 +31,15 @@ namespace UamTTA.Services
             _budgetRepository.Persist(newBudget);
             return newBudget;
         }
+
+        public Budget GetBudgetById(int budgetId)
+        {
+            return _budgetRepository.FindById(budgetId);
+        }
+
+        public Budget UpdateBudget(Budget budget)
+        {
+            return _budgetRepository.Persist(budget);
+        }
     }
 }

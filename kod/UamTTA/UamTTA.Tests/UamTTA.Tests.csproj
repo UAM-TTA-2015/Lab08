@@ -58,7 +58,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\AccountServiceTests.UpdateAccount.cs" />
+    <Compile Include="Services\AccountServiceTests.CreateAccount.cs" />
+    <Compile Include="Services\AccountServiceTests.GetAccountById.cs" />
     <Compile Include="Services\BudgetFactoryTests.cs" />
+    <Compile Include="Services\AccountServiceTests.cs" />
+    <Compile Include="Services\BudgetServiceTests.UpdateBudget.cs" />
+    <Compile Include="Services\BudgetServiceTests.GetBudgetById.cs" />
+    <Compile Include="Services\BudgetServiceTests.CreateBudgetFromTemplate.cs" />
     <Compile Include="Services\BudgetServiceTests.cs" />
     <Compile Include="Tools\EnumerableExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
