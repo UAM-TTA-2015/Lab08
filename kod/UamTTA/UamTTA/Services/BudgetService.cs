@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UamTTA.Model;
 using UamTTA.Storage;
@@ -58,6 +59,8 @@ namespace UamTTA.Services
         public Budget AddAccountToBudget(int budgetId, int accountId)
         {
             Budget budget = _budgetRepository.FindById(budgetId);
+            if (budget.RelatedAccounts == null)
+                budget.RelatedAccounts = new List<Account>();
             if (budget.RelatedAccounts.Any(a => a.Id == accountId))
                 return budget;
             Account account = _accountRepository.FindById(accountId);
