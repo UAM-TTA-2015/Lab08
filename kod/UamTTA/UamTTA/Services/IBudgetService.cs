@@ -5,6 +5,8 @@ namespace UamTTA.Services
 {
     public interface IBudgetService
     {
+        BudgetTemplate CreateBudgetTemplate(BudgetTemplate template);
+
         Budget CreateBudgetFromTemplate(BudgetTemplate template, DateTime startDate);
 
         Budget CreateBudgetFromTemplate(int templateId, DateTime startDate);

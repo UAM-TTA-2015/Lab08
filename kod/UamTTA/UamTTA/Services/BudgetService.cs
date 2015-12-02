@@ -17,6 +17,16 @@ namespace UamTTA.Services
             _templateRepository = templateRepository;
         }
 
+        public BudgetTemplate CreateBudgetTemplate(BudgetTemplate template)
+        {
+            return _templateRepository.Persist(template);
+        }
+
+        public BudgetTemplate UpdateBudgetTemplate(BudgetTemplate template)
+        {
+            return _templateRepository.Persist(template);
+        }
+
         public Budget CreateBudgetFromTemplate(BudgetTemplate template, DateTime startDate)
         {
             Budget newBudget = _factory.CreateBudget(template, startDate);

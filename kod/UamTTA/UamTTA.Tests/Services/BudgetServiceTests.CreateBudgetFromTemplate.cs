@@ -29,7 +29,7 @@ namespace UamTTA.Tests.Services
 
             _sut.CreateBudgetFromTemplate(new BudgetTemplate(), DateTime.Today);
 
-            A.CallTo(() => _repository.Persist(someBudget)).MustHaveHappened();
+            A.CallTo(() => _budgetRepository.Persist(someBudget)).MustHaveHappened();
         }
 
         [Test]
@@ -69,7 +69,7 @@ namespace UamTTA.Tests.Services
 
             _sut.CreateBudgetFromTemplate(someTemplateId, DateTime.Today);
 
-            A.CallTo(() => _repository.Persist(someBudget)).MustHaveHappened();
+            A.CallTo(() => _budgetRepository.Persist(someBudget)).MustHaveHappened();
         }
     }
 }

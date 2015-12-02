@@ -14,7 +14,7 @@ namespace UamTTA.Tests.Services
 
             _sut.GetBudgetById(budgetId);
 
-            A.CallTo(() => _repository.FindById(budgetId))
+            A.CallTo(() => _budgetRepository.FindById(budgetId))
                 .MustHaveHappened();
         }
 
@@ -22,7 +22,7 @@ namespace UamTTA.Tests.Services
         public void GetBudgetById_Should_Return_Budget_From_Repository()
         {
             var expected = new Budget();
-            A.CallTo(() => _repository.FindById(A<int>._))
+            A.CallTo(() => _budgetRepository.FindById(A<int>._))
                 .Returns(expected);
 
             var result = _sut.GetBudgetById(11);
