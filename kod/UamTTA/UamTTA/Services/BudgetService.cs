@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UamTTA.Model;
 using UamTTA.Storage;
 
@@ -9,12 +10,14 @@ namespace UamTTA.Services
         private readonly IBudgetFactory _factory;
         private readonly IRepository<Budget> _budgetRepository;
         private readonly IRepository<BudgetTemplate> _templateRepository;
+        private readonly IRepository<Account> _accountRepository;
 
-        public BudgetService(IBudgetFactory factory, IRepository<Budget> budgetRepository, IRepository<BudgetTemplate> templateRepository)
+        public BudgetService(IBudgetFactory factory, IRepository<Budget> budgetRepository, IRepository<BudgetTemplate> templateRepository, IRepository<Account> accountRepository)
         {
             _factory = factory;
             _budgetRepository = budgetRepository;
             _templateRepository = templateRepository;
+            _accountRepository = accountRepository;
         }
 
         public BudgetTemplate CreateBudgetTemplate(BudgetTemplate template)
@@ -50,6 +53,21 @@ namespace UamTTA.Services
         public Budget UpdateBudget(Budget budget)
         {
             return _budgetRepository.Persist(budget);
+        }
+
+        public Budget AddAccountToBudget(int budgetId, int accountId)
+        {
+            Budget budget = _budgetRepository.FindById(budgetId);
+            if (budget.RelatedAccounts.Any(a => a.Id == accountId))
+                return budget;
+            Account account = _accountRepository.FindById(accountId);
+            budget.RelatedAccounts.Add(account);
+            return _budgetRepository.Persist(budget);
+        }
+
+        public Budget AddTransferToBudget(int budgetId, Transfer transfer)
+        {
+            throw new NotImplementedException();
         }
     }
 }

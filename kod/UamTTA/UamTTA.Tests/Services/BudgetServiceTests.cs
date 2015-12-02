@@ -15,13 +15,15 @@ namespace UamTTA.Tests.Services
             _budgetFactory = A.Fake<IBudgetFactory>();
             _budgetRepository = A.Fake<IRepository<Budget>>();
             _templateRepository = A.Fake<IRepository<BudgetTemplate>>();
+            _accountRepository = A.Fake<IRepository<Account>>();
 
-            _sut = new BudgetService(_budgetFactory, _budgetRepository, _templateRepository);
+            _sut = new BudgetService(_budgetFactory, _budgetRepository, _templateRepository, _accountRepository);
         }
 
         private BudgetService _sut;
         private IBudgetFactory _budgetFactory;
         private IRepository<Budget> _budgetRepository;
         private IRepository<BudgetTemplate> _templateRepository;
+        private IRepository<Account> _accountRepository;
     }
 }

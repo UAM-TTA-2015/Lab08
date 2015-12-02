@@ -64,6 +64,7 @@
     <Compile Include="Services\BudgetFactoryTests.cs" />
     <Compile Include="Services\AccountServiceTests.cs" />
     <Compile Include="Services\BudgetServiceTests.CreateBudgetTemplate.cs" />
+    <Compile Include="Services\BudgetServiceTests.AddAccountToBudget.cs" />
     <Compile Include="Services\BudgetServiceTests.UpdateBudgetTemplate.cs" />
     <Compile Include="Services\BudgetServiceTests.UpdateBudget.cs" />
     <Compile Include="Services\BudgetServiceTests.GetBudgetById.cs" />

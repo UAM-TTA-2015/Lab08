@@ -14,5 +14,9 @@ namespace UamTTA.Services
         Budget GetBudgetById(int budgetId);
 
         Budget UpdateBudget(Budget budget);
+
+        Budget AddAccountToBudget(int budgetId, int accountId);
+
+        Budget AddTransferToBudget(int budgetId, Transfer transfer);
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace UamTTA.Model
+﻿using System.Collections.Generic;
+
+namespace UamTTA.Model
 {
     public class Account : ModelBase
     {
@@ -15,6 +17,10 @@
         public bool RequiresClearing { get; set; }
 
         public Account ClearingAccount { get; set; }
+
+        public ICollection<BudgetTemplate> BudgetTemplates { get; set; }
+
+        public ICollection<Budget> Budgets { get; set; }
 
         public override string ToString()
         {

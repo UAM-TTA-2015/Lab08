@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UamTTA.Tools;
 
 namespace UamTTA.Model
@@ -8,14 +7,14 @@ namespace UamTTA.Model
     {
         public BudgetTemplate()
         {
-            Accounts = Enumerable.Empty<Account>();
+            Accounts = new List<Account>();
         }
 
         public string Name { get; set; }
 
-        public IEnumerable<Account> Accounts { get; set; }
-
         public Duration Duration { get; set; }
+
+        public ICollection<Account> Accounts { get; set; }
 
         public override string ToString()
         {
