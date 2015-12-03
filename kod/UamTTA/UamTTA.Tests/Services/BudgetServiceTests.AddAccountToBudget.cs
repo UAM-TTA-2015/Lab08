@@ -40,6 +40,8 @@ namespace UamTTA.Tests.Services
                 .Returns(new Budget { RelatedAccounts = new List<Account>() });
             A.CallTo(() => _budgetRepository.Persist(A<Budget>._))
                 .Returns(expected);
+            A.CallTo(() => _accountRepository.FindById(accountId))
+                .Returns(new Account());
 
             var result = _sut.AddAccountToBudget(budgetId, accountId);
 
