@@ -59,11 +59,15 @@ namespace UamTTA.Services
         public Budget AddAccountToBudget(int budgetId, int accountId)
         {
             Budget budget = _budgetRepository.FindById(budgetId);
+            if (budget == null)
+                throw new ArgumentException("Budget id is invalid!", nameof(budgetId));
             if (budget.RelatedAccounts == null)
                 budget.RelatedAccounts = new List<Account>();
             if (budget.RelatedAccounts.Any(a => a.Id == accountId))
                 return budget;
             Account account = _accountRepository.FindById(accountId);
+            if (account == null)
+                throw new ArgumentException("Account id is invalid!", nameof(accountId));
             budget.RelatedAccounts.Add(account);
             return _budgetRepository.Persist(budget);
         }
