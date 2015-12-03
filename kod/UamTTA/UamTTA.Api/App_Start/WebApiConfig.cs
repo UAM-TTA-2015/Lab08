@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
@@ -35,6 +34,7 @@ namespace UamTTA.Api
             builder.RegisterType<BudgetFactory>().As<IBudgetFactory>();
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>));
             builder.RegisterType<BudgetService>().As<IBudgetService>();
+            builder.RegisterType<AccountService>().As<IAccountService>();
         }
     }
 }
