@@ -1,12 +1,12 @@
 # Tworzenie testowalnych aplikacji
-## Laboratorium #8 - Testy integracyjne część 2
+## Laboratorium #8 - Testy integracyjne część 1
 
 ### Prowadzący zajęcia
 Bartosz Sokół, Nikodem Rafalski
 
 ### Opis zajęć
 Na ósmych zajęciach kontynuujemy pracę nad wspólnym projektem, który będziemy rozwijać do końca semestru.
-Zobaczymy jak komponować większą część systemu za pomocą testów integracyjnych.
+Zobaczymy jak testować większą część systemu za pomocą testów integracyjnych.
 
 ### Materiały
 * Wymagania które ma spełniać nasza aplikacja: [Wymagania](Wymagania.md)
