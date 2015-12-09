@@ -7,6 +7,7 @@ Bartosz Sokół, Nikodem Rafalski
 ### Opis zajęć
 Na ósmych zajęciach kontynuujemy pracę nad wspólnym projektem, który będziemy rozwijać do końca semestru.
 Zobaczymy jak testować większą część systemu za pomocą testów integracyjnych.
+Skupimy się na testowaniu powiązania aplikacji z bazą danych i sprawdzaniu integralności systemu.
 
 ### Materiały
 * Wymagania które ma spełniać nasza aplikacja: [Wymagania](Wymagania.md)
